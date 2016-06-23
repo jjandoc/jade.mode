@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
-  <template>mytemplate.jade</template>   <!-- Provide a template for File->new -->
+  <template>mytemplate.pug</template>   <!-- Provide a template for File->new -->
   <recognition>
-    <extension casesensitive="yes">jade</extension> <!-- Add case sensitive file extensions -->
+    <extension casesensitive="yes">pug</extension> <!-- Add case sensitive file extensions -->
   </recognition>
 </settings>

@@ -2,18 +2,18 @@
 <!DOCTYPE syntax SYSTEM "syntax.dtd">
 <syntax>
   <head>
-      <name>jade</name>
+      <name>pug</name>
       <charsintokens><![CDATA[_0987654321abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@#%.]]>
       </charsintokens>
       <charsdelimitingtokens><![CDATA[ ]]></charsdelimitingtokens>
     </head>
   <states>
     <default id="Base" scope="meta.default">
-      <keywords id="Tags" casesensitive="yes" useforautocomplete="yes" scope="markup.tag.attribute.name.generic.jade">
+      <keywords id="Tags" casesensitive="yes" useforautocomplete="yes" scope="markup.tag.attribute.name.generic.pug">
         <regex>^\s*(data|html|head|title|base|link|meta|style|script|noscript|body|article|nav|aside|section|header|footer|(h[1-6])|hgroup|address|p|hr|pre|blockquote|ol|ul|li|dl|dt|dd|figure|figcaption|div|table|caption|thead|tbody|tfoot|tr|th|td|col|colgroup|form|fieldset|legend|label|input|button|select|datalist|optgroup|option|textarea|keygen|output|progress|meter|details|summary|command|menu|del|ins|img|iframe|embed|object|param|video|audio|source|canvas|track|map|area|a|em|strong|i|b|u|s|small|abbr|q|cite|dfn|sub|sup|time|code|kbd|samp|var|mark|bdi|bdo|ruby|rt|rp|span|br|wbr)\b</regex>
       </keywords>
-      <!-- jade Specific Keywords -->
-      <keywords id="jade Specific Keywords" scope="keyword.control.jade">
+      <!-- pug Specific Keywords -->
+      <keywords id="pug Specific Keywords" scope="keyword.control.pug">
             <regex>^\s*(append)\b</regex>
             <regex>^\s*(block)\b</regex>
             <regex>^\s*(case)\b</regex>
@@ -25,7 +25,7 @@
             <regex>^\s*(mixin)\b</regex>
             <regex>^\s*(when)\b</regex>
           </keywords>
-      <state id="jade ID" useforautocomplete="no" scope="markup.tag.attribute.name.id.jade">
+      <state id="pug ID" useforautocomplete="no" scope="markup.tag.attribute.name.id.pug">
             <begin>
               <regex>#(?=\w)</regex>
             </begin>
@@ -33,7 +33,7 @@
               <regex>[\w-]*(?=[^\w-]*)</regex>
             </end>
         </state>
-      <state id="jade Class" useforautocomplete="no" scope="markup.tag.attribute.name.class.jade">
+      <state id="pug Class" useforautocomplete="no" scope="markup.tag.attribute.name.class.pug">
           <begin>
             <regex>\.(?=\w)</regex>
           </begin>
@@ -41,15 +41,15 @@
             <regex>[\w-]*(?=[^\w-]*)</regex>
           </end>
       </state>
-      <state id="jade HTML Attributes" useforautocomplete="no" scope="markup.tag.jade">
+      <state id="pug HTML Attributes" useforautocomplete="no" scope="markup.tag.pug">
         <begin><regex>\(</regex></begin>
         <end><regex>\)</regex></end>
-        <state id="Strings in jade HTML Attributes" type="string" useforautocomplete="no" scope="string">
+        <state id="Strings in pug HTML Attributes" type="string" useforautocomplete="no" scope="string">
           <begin><regex>"</regex></begin>
           <end><regex>"</regex></end>
         </state>
         <!-- STUDIO support for single quote strings -->
-        <state id="Single Strings in jade HTML Attributes" type="string" useforautocomplete="no" scope="string">
+        <state id="Single Strings in pug HTML Attributes" type="string" useforautocomplete="no" scope="string">
           <begin>
             <regex>'</regex>
           </begin>
@@ -57,14 +57,14 @@
             <regex>'</regex>
           </end>
         </state>
-        <keywords id="Attributes in jade HTML Attributes" useforautocomplete="no" scope="markup.tag.attribute.value.jade">
+        <keywords id="Attributes in pug HTML Attributes" useforautocomplete="no" scope="markup.tag.attribute.value.pug">
           <regex>([a-zA-Z]{1}[\w\-\:]*)(?=[ \t]*=)</regex>
         </keywords>
       </state>
-      <state id="jade Embedded Javascript">
+      <state id="pug Embedded Javascript">
         <begin><regex>\A\s*(?:-|=|!=)</regex></begin>
         <end><regex>.$</regex></end>
-        <keywords id="JS Keywords" useforautocomplete="yes" scope="keyword.control.js.jade" >
+        <keywords id="JS Keywords" useforautocomplete="yes" scope="keyword.control.js.pug" >
           <regex>\b(if|else|for|in|while|do|continue|break|with|try|catch|switch|case|new|var|function|return|this|delete|true|false|void|throw|typeof|const|default)\b</regex>
         </keywords>
         <!--
@@ -75,7 +75,7 @@
 			        <state-link mode="Javascript" state="SingleString" />
 		        -->
       </state>
-      <state id="jade Interpolate Escaped" useforautocomplete="no" scope="language.variable.interpolation.escaped.jade" >
+      <state id="pug Interpolate Escaped" useforautocomplete="no" scope="language.variable.interpolation.escaped.pug" >
         <begin>
           <regex>(?:#\{)</regex>
         </begin>
@@ -83,7 +83,7 @@
           <regex>\}(?&lt;!\\)</regex>
         </end>
       </state>
-      <state id="jade Interpolate Unescaped" useforautocomplete="no" scope="language.variable.interpolation.jade">
+      <state id="pug Interpolate Unescaped" useforautocomplete="no" scope="language.variable.interpolation.pug">
         <begin>
           <regex>(?:[\\]{0}\!\{)</regex>
         </begin>
@@ -91,7 +91,7 @@
           <regex>\}(?&lt;!\\)</regex>
         </end>
       </state>
-      <state id="jade Comment" useforautocomplete="no" scope="comment.jade">
+      <state id="pug Comment" useforautocomplete="no" scope="comment.pug">
         <begin>
           <regex>^\s*(?:\/\/)</regex>
         </begin>
@@ -100,7 +100,7 @@
         </end>
       </state>
       <!-- TODO: end tag invalid for indented comment block
-			      <state id="jade Comment/Block" useforautocomplete="no" scope="comment.block.jade">
+			      <state id="pug Comment/Block" useforautocomplete="no" scope="comment.block.pug">
 			        <begin>
 			          <regex>^(\s*)(//)\s*$</regex>
 			        </begin>
@@ -109,7 +109,7 @@
 			        </end>
 			      </state>
 		      -->
-      <state id="jade Comment/Unbuffered" useforautocomplete="no" scope="comment.unbuffered.jade">
+      <state id="pug Comment/Unbuffered" useforautocomplete="no" scope="comment.unbuffered.pug">
         <begin>
           <regex>^\s*(?:\/\/-)</regex>
         </begin>
@@ -124,7 +124,7 @@
 					<regex>(?&lt;!\!)(--)(?!>)</regex>
 				</keywords>
 			</state>
-      <state id="jade Doctype" useforautocomplete="no" scope="markup.declaration.jade">
+      <state id="pug Doctype" useforautocomplete="no" scope="markup.declaration.pug">
         <begin>
           <regex>\A(?:\!\!\!)</regex>
         </begin>
@@ -132,7 +132,7 @@
           <regex>[\r\n]</regex>
         </end>
       </state>
-      <keywords id="Entities" useforautocomplete="no" scope="markup.constant.entity.jade">
+      <keywords id="Entities" useforautocomplete="no" scope="markup.constant.entity.pug">
 				<regex>(&amp;#\d+;)</regex>
 				<regex>(&amp;#x\h+;)</regex>
 				<regex>(&amp;[\w\d\.\-]+;)</regex>

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>SEEMode.jade</string>
+	<string>SEEMode.pug</string>
 	<key>CFBundleName</key>
-	<string>jade</string>
+	<string>pug</string>
 	<key>CFBundleShortVersionString</key>
 	<string>0.1</string>
 	<key>CFBundleVersion</key>
