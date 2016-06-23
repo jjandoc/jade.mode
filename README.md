@@ -1,12 +1,12 @@
 # NOTE: This is the Coda 2 version of the mode. For Coda 1.x please refer to the [original version](https://github.com/aaronmccall/jade.mode).
 
-# jade.mode
+# pug.mode
 
-jade.mode is a jade syntax definition for Coda 2. It is not complete, but it is useful. Please fork, make suggestions or otherwise help as you see fit.
+pug.mode is a pug, formerly known as "jade", syntax definition for Coda 2. This is a fork of the [jade.mode repo](https://github.com/aaronmccall/jade.mode) and really just swaps any instance of "jade" with "pug".
 
 ### Installation
 
-Simply check out this repo into either `~/Library/Application Support/Coda 2/Modes` as jade.mode and you're set!
+Simply check out this repo into either `~/Library/Application Support/Coda 2/Modes` as pug.mode and you're set!
 
 ## Features
 * Updated for Coda 2
@@ -40,9 +40,5 @@ In case you want to tweak your theme a bit, you can add the following scopes in 
 
 ## Author
 
-* Aaron McCall
+* Original plugin by [Aaron McCall](https://github.com/aaronmccall/)
 * Coda 2 Updates+Refactor by [Tom Stoecklein](http://github.com/bluestrike2)
-
-## Credits
-
-James Menera gave me invaluable feedback and encouragement. Thanks, James!
